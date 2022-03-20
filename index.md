@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## NICO++
 
 You can use the [editor on GitHub](https://github.com/THU-TAI/NICOPlus/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
