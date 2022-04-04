@@ -1,41 +1,59 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>NICO: Non-I.I.D. Image dataset with Contexts</title>
-<link rel="stylesheet" href="jemdoc.css" type="text/css">
+	<meta charset="utf-8">
+	<title>NICO: Non-I.I.D. Image dataset with Contexts</title>
+	<link rel="stylesheet" href="jemdoc.css" type="text/css">
 </head>
+
 <body>
 
-<h1>NICO: Non-I.I.D. Image dataset with Contexts</h1>
+	<h1>NICO: Non-I.I.D. Image dataset with Contexts</h1>
 
-<h2>Instruction</h2>
+	<h2>Introduction</h2>
 
-<p >
-	NICO dataset is dedicatedly designed for <b>Non-I.I.D.</b> or <b>OOD</b> (Out-of-Distribution) image classification.
-	It simulates a real world setting that the testing distribution may induce arbitrary shifting from the training distribution, which violates the traditional I.I.D. hypothesis of most ML methods. The typical research directions that the dataset can well support include but are not limited to transfer learning or domain adaptation (when testing distribution is known) and stable learning or domain generalization (when testing distribution is unknown). 
-</p>
+	<p>
+		NICO dataset is dedicatedly designed for <b>Non-I.I.D.</b> or <b>OOD</b> (Out-of-Distribution) image
+		classification.
+		It simulates a real world setting that the testing distribution may induce arbitrary shifting from the training
+		distribution, which violates the traditional I.I.D. hypothesis of most ML methods. The typical research
+		directions that the dataset can well support include but are not limited to transfer learning or domain
+		adaptation (when testing distribution is known) and stable learning or domain generalization (when testing
+		distribution is unknown).
+	</p>
 
-<p>
-	The basic idea of constructing the dataset is to label images with both main concepts (e.g. dog) and the contexts (e.g. on grass) that visual concepts appear in.
-	By adjusting the proportions of different contexts in training and testing data, one can control the degree of distribution shift flexibly and 
-	conduct studies on different kinds of Non-I.I.D. settings.
-</p>
+	<p>
+		The basic idea of constructing the dataset is to label images with both main concepts (e.g. dog) and the
+		contexts (e.g. on grass) that visual concepts appear in.
+		By adjusting the proportions of different contexts in training and testing data, one can control the degree of
+		distribution shift flexibly and
+		conduct studies on different kinds of Non-I.I.D. settings.
+	</p>
 
-<div><img src="aaa.png"  alt="Samples with contexts in NICO." width=100% style="float:center" /></div>
+	<div><img src="aaa.png" alt="Samples with contexts in NICO." width=100% style="float:center" /></div>
 
-<p>
-	Till now, there are two superclasses: Animal and Vehicle, with 10 classes for Animal and 9 classes for Vehicle. Each class has 9 or 10 contexts. The average number of images per context ranges from <b>83</b> to <b>215</b>, and the average number of images per class is about <b>1300</b> images (similar to ImageNet). In total, NICO contains <b>19</b> classes, <b>188</b> contexts and nearly <b>25,000</b> images. The current version has been able to support the training of deep convolution networks (e.g. ResNet-18) from scratch. The scale is still increasing, and is easy to be expanded because of the hierarchical structure.
-</p>
+	<p>
+		Till now, there are two superclasses: Animal and Vehicle, with 10 classes for Animal and 9 classes for Vehicle.
+		Each class has 9 or 10 contexts. The average number of images per context ranges from <b>83</b> to <b>215</b>,
+		and the average number of images per class is about <b>1300</b> images (similar to ImageNet). In total, NICO
+		contains <b>19</b> classes, <b>188</b> contexts and nearly <b>25,000</b> images. The current version has been
+		able to support the training of deep convolution networks (e.g. ResNet-18) from scratch. The scale is still
+		increasing, and is easy to be expanded because of the hierarchical structure.
+	</p>
 
-<div><center><img src="bbb.png" style="float:center" alt="Samples with contexts in NICO." width=40% /></center></div>
+	<div>
+		<center><img src="bbb.png" style="float:center" alt="Samples with contexts in NICO." width=40% /></center>
+	</div>
 
-<h2>Download</h2>
+	<h2>Download</h2>
 
-<p> 
-	The NICO dataset is available <a href="https://www.dropbox.com/sh/8mouawi5guaupyb/AAD4fdySrA6fn3PgSmhKwFgva?dl=0">here</a>.
-	One can use the whole dataset or only partial data (e.g. one superclass) as you need, and divide it in your own way.
-<!--	
+	<p>
+		The NICO dataset is available <a
+			href="https://www.dropbox.com/sh/8mouawi5guaupyb/AAD4fdySrA6fn3PgSmhKwFgva?dl=0">here</a>.
+		One can use the whole dataset or only partial data (e.g. one superclass) as you need, and divide it in your own
+		way.
+		<!--	
 	As the experimental results always change according to different divisions because of factors like context proportion, data noise and so on,
 	for fair evaluation, we also provide fixed data partitions for some typical Non-I.I.D. settings as follow.
 </p>
@@ -43,39 +61,44 @@
 <p>
 	To be continued...
 -->
-</p>
+	</p>
 
-<h2>Attention</h2>
+	<h2>Copyright</h2>
+	<p>
+		The intention of releasing NICO is to appeal more attention and promote the research on intrinsic learning
+		mechanisms that possibly light up the way to the third-wave of AI featuring with strong generalization ability.
+		Although some preprocessing tricks like saliency detection or object segmentation can improve the classification
+		performance to some extent,
+		<span><b>they are not encouraged when exploiting NICO as the benchmark</b></span>.
+	</p>
 
-<p>
-	The intention of releasing NICO is to appeal more attention and promote the research on intrinsic learning mechanisms that possibly light up the way to the third-wave of AI featuring with strong generalization ability. 
-	Although some preprocessing tricks like saliency detection or object segmentation can improve the classification performance to some extent, 
-	<span><b>they are not encouraged when exploiting NICO as the benchmark</b></span>.
-</p>
+	<h2>Citing</h2>
+	<p>
+		More details about NICO dataset and various Non-I.I.D. settings created using it can be looked up in paper <a
+			href="https://doi.org/10.1016/j.patcog.2020.107383">Towards Non-I.I.D. Image Classification: A Dataset and
+			Baselines</a>.
+		And anyone who adopts NICO in his/her experiments should cite this article in their publications and reports (as
+		the citation template below).
+	</p>
 
-<h2>Citation</h2>
-<p>
-	More details about NICO dataset and various Non-I.I.D. settings created using it can be looked up in paper <a href="http://pengcui.thumedialab.com/papers/NICO.pdf">Towards Non-I.I.D. Image Classification: A Dataset and Baselines</a>.
-	And anyone who adopts NICO in his/her experiments should cite this article in their publications and reports (as the citation template below).
-</p>
+	<p>
+		@article{he2021towards, </br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title={Towards non-iid image classification: A dataset and baselines}, </br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;author={He, Yue and Shen, Zheyan and Cui, Peng}, </br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;journal={Pattern Recognition}, </br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;volume={110}, </br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pages={107383}, </br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;year={2021}, </br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;publisher={Elsevier} </br>
+		}
+	</p>
 
-<p>
-	<textarea name='citation template', readonly="readonly", rows="5", cols="60">@article{he2020towards,
-  title={Towards Non-IID Image Classification: A Dataset and Baselines},
-  author={He, Yue and Shen, Zheyan and Cui, Peng},
-  journal={Pattern Recognition},
-  pages={107383},
-  year={2020},
-  publisher={Elsevier}
-}
-	</textarea>
-</p>
-
-<h2>Copyright</h2>
-<p>
-	Please note that NICO dataset does not own the copyright of images. 
-	Only researchers and educators who wish to use the images for non-commercial researches and/or educational purposes, have access to NICO. 
-</p>
-
+	<h2>Copyright</h2>
+	<p>
+		Please note that NICO dataset does not own the copyright of images.
+		Only researchers and educators who wish to use the images for non-commercial researches and/or educational
+		purposes, have access to NICO.
+	</p>
 </body>
+
 </html>
